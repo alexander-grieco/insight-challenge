@@ -101,7 +101,7 @@ def setLast(sumDict):
 		raise DictError("No time periods detected. Check the actual.txt file for the proper format")
 
 	last = list(sumDict)[-1] #captures the last hour
-	
+
 	# makes sure that the window size is not larger than the number of hours in the entire data set
 	if last < windowNum:
 		raise DictError("Window size is {}, which is larger than the number of timeperiods in actual.txt, which is {}.".format(windowNum, last))
@@ -138,6 +138,7 @@ def slideWindow(sumPrice, count, sumDict, win_start, win_end):
 	#increases the start and end locations of the window
 	win_start+=1
 	win_end+=1
+	#leave
 
 	if sumDict.get(win_end) != None: # there is data for the time period entering the window
 		if sumDict.get(win_start-1) != None: # there is data for the time period leaving the window
