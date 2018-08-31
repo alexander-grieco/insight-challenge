@@ -138,7 +138,6 @@ def slideWindow(sumPrice, count, sumDict, win_start, win_end):
 	#increases the start and end locations of the window
 	win_start+=1
 	win_end+=1
-	#leave
 
 	if sumDict.get(win_end) != None: # there is data for the time period entering the window
 		if sumDict.get(win_start-1) != None: # there is data for the time period leaving the window
